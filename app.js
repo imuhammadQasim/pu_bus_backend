@@ -11,7 +11,6 @@ app.use(
         contentSecurityPolicy: false,
     })
 );
-// CORS configuration
 app.use(
     cors({
         origin: config.CORS.ORIGIN,

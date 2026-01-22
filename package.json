@@ -1,0 +1,38 @@
+{
+  "name": "pu_bus_backend",
+  "version": "1.0.0",
+  "description": "PU bus routing backend ",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imuhammadQasim/pu_bus_backend.git"
+  },
+  "keywords": [
+    "PU",
+    "bus",
+    "rouitng",
+    "station"
+  ],
+  "author": "Muhammad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imuhammadQasim/pu_bus_backend/issues"
+  },
+  "homepage": "https://github.com/imuhammadQasim/pu_bus_backend#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.11",
+    "prisma": "^7.3.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^7.3.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.2.1",
+    "helmet": "^8.1.0",
+    "pg": "^8.17.2"
+  }
+}

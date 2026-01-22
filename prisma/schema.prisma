@@ -5,8 +5,9 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client"
+  provider = "prisma-client-js"
   output   = "../generated/prisma"
+  // output   = "../node_modules/.prisma/client"
 }
 
 datasource db {
@@ -14,7 +15,7 @@ datasource db {
 }
 
 model Location {
-  id        Int          @id @default(autoincrement())
+  id        String       @id @default(uuid())
   name      String
   type      LocationType
   lat       Float
@@ -22,7 +23,9 @@ model Location {
   info      String
   address   String
   image     String
-  createdAt DateTime     @default(now())
+  createdAt DateTime     @default(now()) @map("created_at")
+
+  @@map("location")
 }
 
 enum LocationType {
@@ -30,4 +33,46 @@ enum LocationType {
   HOSTEL
   GROUND
   GATE
+}
+
+model Route {
+  id    String @id @default(uuid())
+  name  String
+  desc  String
+  color String
+
+  waypoints Waypoint[]
+  batches   RouteBatch[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("routes")
+}
+
+model Waypoint {
+  id   String @id @default(uuid())
+  name String
+  lat  Float
+  lng  Float
+
+  route   Route  @relation(fields: [routeId], references: [id], onDelete: Cascade)
+  routeId String @map("route_id")
+
+  @@map("waypoints")
+}
+
+model RouteBatch {
+  id    String    @id @default(uuid())
+  batch BatchType
+
+  route   Route  @relation(fields: [routeId], references: [id], onDelete: Cascade)
+  routeId String @map("route_id")
+
+  @@map("route_batches")
+}
+
+enum BatchType {
+  MORNING
+  AFTERNOON
+  EVENING
 }

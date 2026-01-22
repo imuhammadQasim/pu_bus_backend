@@ -4,7 +4,8 @@
   "description": "PU bus routing backend ",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "seed": "node config/seed.data.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "prisma": "^7.3.0"
   },
   "dependencies": {
+    "@prisma/adapter-pg": "^7.3.0",
     "@prisma/client": "^7.3.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",

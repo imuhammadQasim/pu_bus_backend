@@ -1,29 +1,29 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 const config = require("./config/env");
 const rateLimit = require("express-rate-limit");
-const helmet = require('helmet')
-const cors = require('cors')
-const routes = require('./routes/index')
+const helmet = require("helmet");
+const cors = require("cors");
+const routes = require("./routes/index");
 
 app.use(
-    helmet({
-        contentSecurityPolicy: false,
-    })
+  helmet({
+    contentSecurityPolicy: false,
+  }),
 );
 app.use(
-    cors({
-        origin: config.CORS.ORIGIN,
-        credentials: true,
-    })
+  cors({
+    origin: config.CORS.ORIGIN,
+    credentials: true,
+  }),
 );
 
 const limiter = rateLimit({
-    windowMs: config.SECURITY.RATE_LIMIT_WINDOW_MS,
-    max: config.SECURITY.RATE_LIMIT_MAX_REQUESTS,
-    message: "Too many requests from this IP, please try again later",
-    standardHeaders: true,
-    legacyHeaders: false,
+  windowMs: config.SECURITY.RATE_LIMIT_WINDOW_MS,
+  max: config.SECURITY.RATE_LIMIT_MAX_REQUESTS,
+  message: "Too many requests from this IP, please try again later",
+  standardHeaders: true,
+  legacyHeaders: false,
 });
 
 app.use("/api", limiter);
@@ -33,5 +33,7 @@ app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
 app.use("/api", routes);
 
+// Global Error Handler
+app.use(require("./middlewares/error.middleware"));
 
 module.exports = app;

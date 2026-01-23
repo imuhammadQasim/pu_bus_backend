@@ -1,6 +1,8 @@
 const express = require("express");
 const busRouter = express.Router();
-const { busController } = require("../controller");
+const { busRouteController } = require("../controller");
 
-busRouter.get("/get-all-routes", busController);
+busRouter.get("/get-all-routes", busRouteController.getAllRoutes);
+busRouter.get("/get-all-routes/:batch", busRouteController.getAllRoutes);
+busRouter.get("/get-route/:id", busRouteController.getRouteById);
 module.exports = busRouter;

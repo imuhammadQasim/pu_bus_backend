@@ -1,3 +1,4 @@
 module.exports = {
-  busController: require("./bus.controller"),
+  busRouteController: require("./bus.routes.controller"),
+  locationController: require("./location.controller"),
 };

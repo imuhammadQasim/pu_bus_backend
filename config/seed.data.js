@@ -1,5 +1,5 @@
 const prisma = require("../database/prisma");
-const { gates, campuses, hostels, grounds } = require("../constants");
+const { gates, campuses, hostels, grounds, routes } = require("../constants");
 
 async function seed() {
   try {
@@ -27,6 +27,29 @@ async function seed() {
         type: "GROUND",
       })),
     });
+
+    console.log("Seeding routes...");
+    for (const route of routes) {
+      await prisma.route.create({
+        data: {
+          name: route.name,
+          desc: route.desc,
+          color: route.color,
+          waypoints: {
+            create: route.waypoints.map((wp) => ({
+              name: wp.name,
+              lat: wp.lat,
+              lng: wp.lng,
+            })),
+          },
+          batches: {
+            create: route.batches.map((batch) => ({
+              batch: batch.toUpperCase(),
+            })),
+          },
+        },
+      });
+    }
   } catch (error) {
     console.log("Seeding failed", error);
   } finally {

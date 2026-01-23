@@ -1,21 +1,23 @@
-/*
-  Warnings:
+-- CreateEnum
+CREATE TYPE "LocationType" AS ENUM ('CAMPUS', 'HOSTEL', 'GROUND', 'GATE');
 
-  - The primary key for the `location` table will be changed. If it partially fails, the table could be left without primary key constraint.
-  - You are about to drop the column `createdAt` on the `location` table. All the data in the column will be lost.
-
-*/
 -- CreateEnum
 CREATE TYPE "BatchType" AS ENUM ('MORNING', 'AFTERNOON', 'EVENING');
 
--- AlterTable
-ALTER TABLE "location" DROP CONSTRAINT "location_pkey",
-DROP COLUMN "createdAt",
-ADD COLUMN     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-ALTER COLUMN "id" DROP DEFAULT,
-ALTER COLUMN "id" SET DATA TYPE TEXT,
-ADD CONSTRAINT "location_pkey" PRIMARY KEY ("id");
-DROP SEQUENCE "location_id_seq";
+-- CreateTable
+CREATE TABLE "location" (
+    "id" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "type" "LocationType" NOT NULL,
+    "lat" DOUBLE PRECISION NOT NULL,
+    "lng" DOUBLE PRECISION NOT NULL,
+    "info" TEXT NOT NULL,
+    "address" TEXT NOT NULL,
+    "image" TEXT NOT NULL,
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "location_pkey" PRIMARY KEY ("id")
+);
 
 -- CreateTable
 CREATE TABLE "routes" (

@@ -1,5 +1,7 @@
 const prisma = require("../database/prisma");
 const asyncHandler = require("../utils/asyncHandler");
+const ApiResponse = require("../utils/ApiResponse");
+const ApiError = require("../utils/ApiError");
 
 const getAllRoutes = asyncHandler(async (req, res) => {
   const { batch } = req.params;
@@ -27,24 +29,28 @@ const getAllRoutes = asyncHandler(async (req, res) => {
     include: {
       waypoints: {
         orderBy: {
-          // Assuming we want them in insertion order or by some id if no index
-          // But currently the schema doesn't have an order index.
-          // We'll just include them.
+          // Assuming waypoints should be ordered by their sequence if added later
+          // For now, we include them all
         },
       },
       batches: true,
     },
   });
-  res.status(200).json({
-    success: true,
-    count: routes.length,
-    message: "Routes fetched successfully",
-    routes,
-  });
+
+  return res
+    .status(200)
+    .json(
+      new ApiResponse(
+        200,
+        { routes, count: routes.length },
+        "Routes fetched successfully",
+      ),
+    );
 });
 
 const getRouteById = asyncHandler(async (req, res) => {
   const { id } = req.params;
+
   const route = await prisma.route.findUnique({
     where: { id },
     include: {
@@ -54,14 +60,12 @@ const getRouteById = asyncHandler(async (req, res) => {
   });
 
   if (!route) {
-    return res.status(404).json({ success: false, message: "Route not found" });
+    throw new ApiError(404, "Route not found");
   }
 
-  res.status(200).json({
-    success: true,
-    message: "Route fetched successfully",
-    route,
-  });
+  return res
+    .status(200)
+    .json(new ApiResponse(200, route, "Route fetched successfully"));
 });
 
 module.exports = {

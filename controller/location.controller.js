@@ -1,5 +1,7 @@
 const prisma = require("../database/prisma");
 const asyncHandler = require("../utils/asyncHandler");
+const ApiResponse = require("../utils/ApiResponse");
+const ApiError = require("../utils/ApiError");
 
 // get hostels
 const getHostels = asyncHandler(async (req, res) => {
@@ -8,14 +10,10 @@ const getHostels = asyncHandler(async (req, res) => {
       type: "HOSTEL",
     },
   });
-  if (!hostels) {
-    return res
-      .status(404)
-      .json({ success: false, message: "No hostels found" });
-  }
-  res
+
+  return res
     .status(200)
-    .json({ success: true, message: "Hostels fetched successfully", hostels });
+    .json(new ApiResponse(200, hostels, "Hostels fetched successfully"));
 });
 
 // get campuses
@@ -25,18 +23,10 @@ const getCampuses = asyncHandler(async (req, res) => {
       type: "CAMPUS",
     },
   });
-  if (!campuses) {
-    return res
-      .status(404)
-      .json({ success: false, message: "No campuses found" });
-  }
-  res
+
+  return res
     .status(200)
-    .json({
-      success: true,
-      message: "Campuses fetched successfully",
-      campuses,
-    });
+    .json(new ApiResponse(200, campuses, "Campuses fetched successfully"));
 });
 
 // get gates
@@ -46,12 +36,10 @@ const getGates = asyncHandler(async (req, res) => {
       type: "GATE",
     },
   });
-  if (!gates) {
-    return res.status(404).json({ success: false, message: "No gates found" });
-  }
-  res
+
+  return res
     .status(200)
-    .json({ success: true, message: "Gates fetched successfully", gates });
+    .json(new ApiResponse(200, gates, "Gates fetched successfully"));
 });
 
 // get grounds
@@ -61,14 +49,10 @@ const getGrounds = asyncHandler(async (req, res) => {
       type: "GROUND",
     },
   });
-  if (!grounds) {
-    return res
-      .status(404)
-      .json({ success: false, message: "No grounds found" });
-  }
-  res
+
+  return res
     .status(200)
-    .json({ success: true, message: "Grounds fetched successfully", grounds });
+    .json(new ApiResponse(200, grounds, "Grounds fetched successfully"));
 });
 
 module.exports = { getHostels, getCampuses, getGates, getGrounds };

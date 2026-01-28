@@ -1,136 +1,138 @@
-# PU Bus Routing Backend - Documentation
+# 🚌 PU Bus Routing Backend - Documentation
 
-Welcome to the **PU Bus Routing Backend** project. This documentation provides a comprehensive guide for both technical developers and non-technical stakeholders to understand how the system works, its purpose, and how to maintain it.
+> **Empowering Students & Staff with Real-Time Routing Information.**
 
----
-
-## 🚌 1. Project Overview (For Layman/Non-Technical Users)
-
-### What is this project?
-
-This is the "brain" behind the PU Bus Routing application. Its primary job is to manage Information about bus routes, stop locations (campuses, hostels, gates, etc.), and schedules for the University of the Punjab (PU).
-
-### Why do we need it?
-
-Students and staff often need to know which bus goes where and at what time. This backend provides that information to the mobile or web app that people use.
-
-### Core Features:
-
-- **Location Management**: A library of all important spots like Gates (1, 2, 4, 5), Campuses (New, Old), Hostels, and Grounds.
-- **Route Tracking**: Detailed paths for different bus routes, including their colors (to identify them easily) and descriptions.
-- **Batch Schedules**: Knowing if a bus runs in the Morning, Afternoon, or Evening.
-- **Security**: Ensures the data is protected and that the system isn't overloaded by too many requests.
+Welcome to the **PU Bus Routing Backend**. This system serves as the central intelligence hub for the University of the Punjab's transportation network, managing complex route data, stop locations, and scheduling.
 
 ---
 
-## 🛠 2. Technical Overview (For Developers)
+## ✨ 1. Project Essence
 
-### Tech Stack
+### 🎯 The "Why"
 
-- **Runtime**: Node.js (v22+)
-- **Framework**: Express.js
-- **Database**: PostgreSQL
-- **ORM**: Prisma (Object-Relational Mapping)
-- **Security**: Helmet, CORS, Express-Rate-Limit
-- **Environment Management**: Dotenv
+Navigating a large university campus can be challenging. This backend bridge the gap between static bus schedules and digital accessibility, providing a single source of truth for the **PU Bus Routing App**.
 
-### Project Structure
+### 🌟 Key Value Propositions
 
-```text
+- **Precision Mapping**: High-fidelity geographical coordinates for all stops.
+- **Dynamic Scheduling**: Support for Morning, Afternoon, and Evening batches.
+- **Visual Clarity**: Color-coded routes for instant identification.
+- **Developer First**: Clean API structure designed for rapid frontend integration.
+
+---
+
+## 🏗 2. Architecture & Design
+
+### 🛠 Technology Stack
+
+| Layer         | Technology       | Purpose                                                   |
+| :------------ | :--------------- | :-------------------------------------------------------- |
+| **Runtime**   | `Node.js v22+`   | High-performance asynchronous execution.                  |
+| **Framework** | `Express.js`     | Robust routing and middleware ecosystem.                  |
+| **Database**  | `PostgreSQL`     | Relational data integrity for geographical points.        |
+| **ORM**       | `Prisma`         | Type-safe database access and automated migrations.       |
+| **Security**  | `Helmet`, `CORS` | Hardening HTTP headers and cross-origin resource sharing. |
+
+### 📂 Directory Map
+
+```bash
 pu_bus_backend/
-├── config/             # Configuration files (Env, Database utility)
-├── controller/         # Business logic for API endpoints
-├── database/           # Prisma client initialization
-├── generated/          # Custom directory for Prisma Client
-├── middlewares/        # Express middlewares (Error handling, etc.)
-├── prisma/             # Prisma schema and migrations
-├── routes/             # API route definitions
-├── constants/          # Static data for seeding
-├── .env                # Environment variables (Sensitive!)
-├── app.js              # Express app setup
-└── server.js           # Entry point
+├── ⚙️ config/         # System settings (Env, DB)
+├── 🧠 controller/     # Core logic for processing requests
+├── 💾 database/       # Prisma client initialization
+├── 🛡️ middlewares/    # Security & Error handling layers
+├── 📐 prisma/         # Database schema & migrations
+├── 🛣️ routes/         # Endpoint definitions
+├── 📦 constants/      # Static seed data (Routes, Locations)
+├── 🛠️ utils/          # Global helper functions
+└── 🚀 server.js       # Application entry point
 ```
 
 ---
 
-## 🚀 3. Getting Started (Technical)
+## 🚀 3. Quick Start (Technical)
 
-### Prerequisites
+### 🧩 Prerequisites
 
-- Node.js installed.
-- PostgreSQL running locally or on a server.
-- `.env` file configured with `DATABASE_URL`.
+- `Node.js` (LTS recommended)
+- `PostgreSQL` instance
+- `.env` file configured (see [Environment Variables](#-environment-variables))
 
-### Installation
+### 🏎 Installation Steps
 
-1. Install dependencies:
+1. **Clone & Install**:
    ```bash
    npm install
    ```
-2. Generate Prisma Client:
+2. **Setup Database**:
    ```bash
    npx prisma generate
-   ```
-3. Sync Database Schema:
-   ```bash
    npx prisma migrate dev --name init
    ```
-4. Seed the Database:
+3. **Seed Data**:
    ```bash
    npm run seed
    ```
-5. Start the Server:
+4. **Launch Dev Mode**:
    ```bash
    npm start
    ```
 
 ---
 
-## 📂 4. API Endpoints
+## � 4. API Reference
 
-### Locations
+### 📍 Location Service
 
-- `GET /api/location`: Fetch all registered locations (Campuses, Hostels, etc.).
-- `GET /api/location/:id`: Get details for a specific location.
+Manage campus landmarks, gates, and hostels.
 
-### Bus Routes
+| Method | Endpoint                 | Description                          |
+| :----- | :----------------------- | :----------------------------------- |
+| `GET`  | `/api/location/campuses` | List all university campuses.        |
+| `GET`  | `/api/location/hostels`  | List all student hostels.            |
+| `GET`  | `/api/location/gates`    | Get entry/exit gate coordinates.     |
+| `GET`  | `/api/location/grounds`  | List sports grounds and open spaces. |
 
-- `GET /api/bus-route`: Fetch all available bus routes.
-- `GET /api/bus-route/:id`: Get detailed waypoints and batch timing for a specific route.
+### 🚌 Route Service
 
----
+Detailed bus paths and timing information.
 
-## 🗄 5. Database Schema (Prisma)
-
-The database consists of the following main models:
-
-- **Location**: Stores coordinates, names, and types (GATE, CAMPUS, HOSTEL, GROUND).
-- **Route**: Stores the route's visual ID (color), name, and description.
-- **Waypoint**: Geographical points that form the bus path.
-- **RouteBatch**: Timing categories (MORNING, AFTERNOON, EVENING).
-
----
-
-## 🛡 6. Security & Best Practices
-
-- **Rate Limiting**: Limits the number of requests per window to prevent DDoS attacks.
-- **Helmet**: Sets various HTTP headers for security.
-- **CORS**: Restricted to specific origins (defined in `.env`).
-- **Error Handling**: Global middleware to catch and format errors consistently.
+| Method | Endpoint                               | Description                                  |
+| :----- | :------------------------------------- | :------------------------------------------- |
+| `GET`  | `/api/bus-route/get-all-routes`        | Fetch all available bus paths.               |
+| `GET`  | `/api/bus-route/get-all-routes/:batch` | Filter routes by Batch (MORNING/EVENING).    |
+| `GET`  | `/api/bus-route/get-route/:id`         | Get full waypoint path for a specific route. |
 
 ---
 
-## 📝 7. Maintenance & Updates
+## � 5. Security & Best Practices
 
-To add new locations or routes manually:
-
-1. Update `constants/index.js` (if using seed method).
-2. Run `npm run seed`.
-3. Alternatively, use **Prisma Studio** to manage data visually:
-   ```bash
-   npx prisma studio
-   ```
+- **🛡 Rate Limiting**: Intelligent throttling to prevent system abuse.
+- **🩺 Global Error Handling**: Unified error response format for consistent debugging.
+- **📄 SEO & Meta**: While this is a backend, we maintain structured responses that are easily indexable by frontend aggregators.
 
 ---
 
-_Last Updated: January 2026_
+## � 6. Maintenance Guide
+
+### Updating the Bus Network
+
+To add a new route or update waypoint coordinates:
+
+1. Modify the `constants/index.js` file with the new data.
+2. Execute the seed script: `npm run seed`.
+3. The Prisma ORM will handle the upsert logic to ensure no duplicate IDs.
+
+---
+
+## 🤝 7. Project Evolution
+
+We are committed to continuous improvement. Future milestones include:
+
+- [ ] Real-time bus tracking integration.
+- [ ] Push notifications for schedule changes.
+- [ ] Multi-campus route optimization algorithms.
+
+---
+
+_Last Synchronized: Early 2026_ | **Developed by [Muhammad](https://github.com/imuhammadQasim)**

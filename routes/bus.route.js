@@ -4,6 +4,7 @@ const { busRouteController } = require("../controller");
 
 // Standard RESTful routes
 busRouter.get("/", busRouteController.getAllRoutes);
+busRouter.get("/get-all-routes", busRouteController.getAllRoutes);
 busRouter.get("/batch/:batch", busRouteController.getAllRoutes);
 busRouter.get("/:id", busRouteController.getRouteById);
 

@@ -43,6 +43,7 @@ model Route {
 
   waypoints Waypoint[]
   batches   RouteBatch[]
+  buses     Bus[]
 
   createdAt DateTime @default(now()) @map("created_at")
 
@@ -69,6 +70,29 @@ model RouteBatch {
   routeId String @map("route_id")
 
   @@map("route_batches")
+}
+
+model Bus {
+  id        String    @id @default(uuid())
+  busNumber String    @unique @map("bus_number")
+  status    BusStatus @default(ACTIVE)
+
+  route   Route?  @relation(fields: [routeId], references: [id])
+  routeId String? @map("route_id")
+
+  lat         Float?
+  lng         Float?
+  lastUpdated DateTime @default(now()) @updatedAt @map("last_updated")
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("buses")
+}
+
+enum BusStatus {
+  ACTIVE
+  INACTIVE
+  MAINTENANCE
 }
 
 enum BatchType {

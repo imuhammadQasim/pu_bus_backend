@@ -1,7 +1,7 @@
 const prisma = require("../database/prisma");
-const asyncHandler = require("../utils/asyncHandler");
-const ApiResponse = require("../utils/ApiResponse");
-const ApiError = require("../utils/ApiError");
+const asyncHandler = require("../utils/async.handler");
+const APIRESPONSE = require("../utils/api.response");
+const APIERROR = require("../utils/api.error");
 
 const getAllRoutes = asyncHandler(async (req, res) => {
   const { batch } = req.params;
@@ -40,7 +40,7 @@ const getAllRoutes = asyncHandler(async (req, res) => {
   return res
     .status(200)
     .json(
-      new ApiResponse(
+      new APIRESPONSE(
         200,
         { routes, count: routes.length },
         "Routes fetched successfully",
@@ -60,12 +60,12 @@ const getRouteById = asyncHandler(async (req, res) => {
   });
 
   if (!route) {
-    throw new ApiError(404, "Route not found");
+    throw new APIERROR(404, "Route not found");
   }
 
   return res
     .status(200)
-    .json(new ApiResponse(200, route, "Route fetched successfully"));
+    .json(new APIRESPONSE(200, route, "Route fetched successfully"));
 });
 
 module.exports = {

@@ -1,7 +1,7 @@
 /**
  * @description Custom error class for API errors
  */
-class ApiError extends Error {
+class APIERROR extends Error {
   constructor(
     statusCode,
     message = "Something went wrong",
@@ -23,4 +23,4 @@ class ApiError extends Error {
   }
 }
 
-module.exports = ApiError;
+module.exports = APIERROR;

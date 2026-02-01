@@ -3,6 +3,12 @@ const { gates, campuses, hostels, grounds, routes } = require("../constants");
 
 async function seed() {
   try {
+    await prisma.bus.deleteMany();
+    await prisma.routeBatch.deleteMany();
+    await prisma.waypoint.deleteMany();
+    await prisma.route.deleteMany();
+    await prisma.location.deleteMany();
+
     await prisma.location.createMany({
       data: gates.map((gate) => ({
         ...gate,
@@ -29,8 +35,9 @@ async function seed() {
     });
 
     console.log("Seeding routes...");
+    const createdRoutes = [];
     for (const route of routes) {
-      await prisma.route.create({
+      const createdRoute = await prisma.route.create({
         data: {
           name: route.name,
           desc: route.desc,
@@ -49,9 +56,29 @@ async function seed() {
           },
         },
       });
+      createdRoutes.push(createdRoute);
+    }
+
+    console.log("Seeding buses...");
+    for (let i = 0; i < createdRoutes.length; i++) {
+      const route = createdRoutes[i];
+      // Create 2 buses for each route
+      for (let j = 1; j <= 2; j++) {
+        const busNumber = `BUS-R${i + 1}-B${j}`;
+        await prisma.bus.create({
+          data: {
+            busNumber,
+            status: "ACTIVE",
+            routeId: route.id,
+            // Initial random location near PU
+            lat: 31.498418 + (Math.random() - 0.5) * 0.01,
+            lng: 74.298244 + (Math.random() - 0.5) * 0.01,
+          },
+        });
+      }
     }
   } catch (error) {
-    console.log("Seeding failed", error);
+    console.error("Seeding failed with error:", error);
   } finally {
     await prisma.$disconnect();
   }

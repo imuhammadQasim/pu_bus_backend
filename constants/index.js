@@ -1,13 +1,12 @@
 const campuses = [
- 
   // ─────────────────────────────────────────────────────────
   //  ✅ EXISTING ENTRIES (retained / coordinates corrected)
   // ─────────────────────────────────────────────────────────
- 
+
   {
     name: "Department of Gender Studies",
-    lat: 31.495661,   
-    lng: 74.294250,   
+    lat: 31.495661,
+    lng: 74.29425,
     info: "Department of Gender Studies, Faculty of Behavioral and Social Sciences, University of the Punjab.",
     address: "University of the Punjab, Quaid-i-Azam Campus, Lahore, Pakistan",
     image:
@@ -116,15 +115,16 @@ const campuses = [
     lat: 31.49448485468987,
     lng: 74.29840247078477,
     info: "Institute of Administrative Sciences, Faculty of Business, Economics and Administrative Sciences, University of the Punjab.",
-    address: "F7VX+P8P Institute of Administrative Sciences, Canal Rd, Quaid-i-Azam Campus, Lahore, Pakistan",
+    address:
+      "F7VX+P8P Institute of Administrative Sciences, Canal Rd, Quaid-i-Azam Campus, Lahore, Pakistan",
     image:
       "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxg8ZfVtiQeDoFnbh1Cr6qpyW0JaKlwuMltRkOsjogANbUE_yMYYcwX6waXlFinNnNRP5MEBs8ut8QGDVmAD_kdrFmiJDuglVCRkW2QjpPCsTc9OWmwqbEB9Xy25atSUqNHeT--=w288-h114-p-k-no",
   },
- 
+
   // ─────────────────────────────────────────────────────────
   //  ➕ NEWLY ADDED — Faculty of Agricultural Sciences
   // ─────────────────────────────────────────────────────────
- 
+
   {
     name: "Department of Agronomy",
     lat: 31.495041,
@@ -151,7 +151,7 @@ const campuses = [
   },
   {
     name: "Department of Food Sciences",
-    lat: 31.495600,
+    lat: 31.4956,
     lng: 74.297017,
     info: "Department of Food Sciences, Faculty of Agricultural Sciences, University of the Punjab.",
     address: "F7WW+6RR, Jannat Rd, Quaid-i-Azam Campus, Lahore, Pakistan",
@@ -168,7 +168,7 @@ const campuses = [
   {
     name: "Department of Plant Breeding and Genetics",
     lat: 31.495272,
-    lng: 74.296700,
+    lng: 74.2967,
     info: "Department of Plant Breeding and Genetics, Faculty of Agricultural Sciences, University of the Punjab.",
     address: "F7WW+4M4, Jannat Rd, Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
@@ -183,23 +183,24 @@ const campuses = [
   },
   {
     name: "Department of Soil Science",
-    lat: 31.495120,
+    lat: 31.49512,
     lng: 74.297624,
     info: "Department of Soil Science, Faculty of Agricultural Sciences, University of the Punjab.",
     address: "F7WX+22X, Jannat Rd, Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
- 
+
   // ─────────────────────────────────────────────────────────
   //  ➕ NEWLY ADDED — Faculty of Arts and Humanities
   // ─────────────────────────────────────────────────────────
- 
+
   {
     name: "Centre for South Asian Studies",
     lat: 31.500544,
     lng: 74.303711,
     info: "Centre for South Asian Studies, Faculty of Arts and Humanities, University of the Punjab.",
-    address: "New Campus, G823+6F8, University of the Punjab, Quaid-i-Azam Campus, Lahore, Pakistan",
+    address:
+      "New Campus, G823+6F8, University of the Punjab, Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
   {
@@ -237,16 +238,17 @@ const campuses = [
   {
     name: "Pakistan Study Centre",
     lat: 31.501048,
-    lng: 74.304190,
+    lng: 74.30419,
     info: "Pakistan Study Centre, Faculty of Arts and Humanities, University of the Punjab.",
-    address: "Underpass No. 1, inside Punjab University, Quaid-i-Azam Campus, Lahore, Pakistan",
+    address:
+      "Underpass No. 1, inside Punjab University, Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
- 
+
   // ─────────────────────────────────────────────────────────
   //  ➕ NEWLY ADDED — Faculty of Behavioral and Social Sciences
   // ─────────────────────────────────────────────────────────
- 
+
   {
     name: "Centre for Clinical Psychology",
     lat: 31.494663,
@@ -266,9 +268,10 @@ const campuses = [
   {
     name: "Institute of Applied Psychology",
     lat: 31.494527,
-    lng: 74.300300,
+    lng: 74.3003,
     info: "Institute of Applied Psychology, Faculty of Behavioral and Social Sciences, University of the Punjab.",
-    address: "F8V2+V96, University of the Punjab, Quaid-i-Azam Campus, Lahore, Pakistan",
+    address:
+      "F8V2+V96, University of the Punjab, Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
   {
@@ -276,20 +279,22 @@ const campuses = [
     lat: 31.495334,
     lng: 74.293808,
     info: "Institute of Social & Cultural Studies, Faculty of Behavioral and Social Sciences, University of the Punjab.",
-    address: "Institute of Social and Cultural Studies, Quaid-i-Azam Campus, Lahore, 54590, Pakistan",
+    address:
+      "Institute of Social and Cultural Studies, Quaid-i-Azam Campus, Lahore, 54590, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
- 
+
   // ─────────────────────────────────────────────────────────
   //  ➕ NEWLY ADDED — Faculty of Business, Economics and Administrative Sciences
   // ─────────────────────────────────────────────────────────
- 
+
   {
     name: "Business Incubation Centre",
-    lat: 31.492727405013863, 
+    lat: 31.492727405013863,
     lng: 74.2984275856527,
     info: "Business Incubation Centre, Faculty of Business, Economics and Administrative Sciences, University of the Punjab.",
-    address: "Business Incubation Center, University of the Punjab, Quaid-i-Azam Campus, Lahore, Pakistan",
+    address:
+      "Business Incubation Center, University of the Punjab, Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
   {
@@ -308,11 +313,11 @@ const campuses = [
     address: "F7VX+8M3, Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
- 
+
   // ─────────────────────────────────────────────────────────
   //  ➕ NEWLY ADDED — Faculty of Chemical and Materials Engineering
   // ─────────────────────────────────────────────────────────
- 
+
   {
     name: "Institute of Metallurgy & Materials Engineering",
     lat: 31.500296,
@@ -324,16 +329,16 @@ const campuses = [
   {
     name: "Institute of Polymer & Textile Engineering",
     lat: 31.492025,
-    lng: 74.291880,
+    lng: 74.29188,
     info: "Institute of Polymer & Textile Engineering, Faculty of Chemical and Materials Engineering, University of the Punjab.",
     address: "54400, Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
- 
+
   // ─────────────────────────────────────────────────────────
   //  ➕ NEWLY ADDED — Faculty of Education
   // ─────────────────────────────────────────────────────────
- 
+
   {
     name: "Institute of Education & Research",
     lat: 31.503563,
@@ -350,11 +355,11 @@ const campuses = [
     address: "G836+5PM, Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
- 
+
   // ─────────────────────────────────────────────────────────
   //  ➕ NEWLY ADDED — Faculty of Electrical, Energy & Environmental Engineering
   // ─────────────────────────────────────────────────────────
- 
+
   {
     name: "Institute of Energy & Environmental Engineering",
     lat: 31.495185,
@@ -363,11 +368,11 @@ const campuses = [
     address: "F7WW+33C, Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
- 
+
   // ─────────────────────────────────────────────────────────
   //  ➕ NEWLY ADDED — Faculty of Geo-Sciences
   // ─────────────────────────────────────────────────────────
- 
+
   {
     name: "Centre for Geographical Information System (GIS)",
     lat: 31.479572,
@@ -381,7 +386,8 @@ const campuses = [
     lat: 31.493663,
     lng: 74.292328,
     info: "Centre for Integrated Mountain Research (CIMR), Faculty of Geo-Sciences, University of the Punjab.",
-    address: "F7VR+FW8, P.O. Box No. 54590, Quaid-i-Azam Campus, Lahore, Pakistan",
+    address:
+      "F7VR+FW8, P.O. Box No. 54590, Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
   {
@@ -405,36 +411,37 @@ const campuses = [
     lat: 31.502047,
     lng: 74.308066,
     info: "Institute of Geology, Faculty of Geo-Sciences, University of the Punjab.",
-    address: "G825+R68, Punjab University Rd, Quaid-i-Azam Campus, Lahore, Pakistan",
+    address:
+      "G825+R68, Punjab University Rd, Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
- 
+
   // ─────────────────────────────────────────────────────────
   //  ➕ NEWLY ADDED — Faculty of Health Sciences
   // ─────────────────────────────────────────────────────────
- 
+
   {
     name: "Centre for Applied Molecular Biology (CAMB)",
     lat: 31.477937,
     lng: 74.263492,
     info: "Centre for Applied Molecular Biology (CAMB), Faculty of Health Sciences, University of the Punjab.",
-    address: "West, Sector 3, 87 Canal Rd, Quaid-i-Azam Campus, Lahore, Pakistan",
+    address:
+      "West, Sector 3, 87 Canal Rd, Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
   {
     name: "Department of Public Health",
-    lat: 31.49534184129732, 
+    lat: 31.49534184129732,
     lng: 74.29379996886966,
     info: "Department of Public Health, Faculty of Health Sciences, University of the Punjab.",
     address: "Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
 
- 
   // ─────────────────────────────────────────────────────────
   //  ➕ NEWLY ADDED — Faculty of Information and Media Studies
   // ─────────────────────────────────────────────────────────
- 
+
   {
     name: "Institute of Information Management",
     lat: 31.501617,
@@ -448,14 +455,15 @@ const campuses = [
     lat: 31.494097,
     lng: 74.300851,
     info: "School of Communication Studies, Faculty of Information and Media Studies, University of the Punjab. Pakistan's oldest journalism school.",
-    address: "University of the Punjab New Campus, Quaid-i-Azam Campus, Lahore, 54590, Pakistan",
+    address:
+      "University of the Punjab New Campus, Quaid-i-Azam Campus, Lahore, 54590, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
- 
+
   // ─────────────────────────────────────────────────────────
   //  ➕ NEWLY ADDED — Faculty of Islamic Studies
   // ─────────────────────────────────────────────────────────
- 
+
   {
     name: "Institute of Islamic Studies",
     lat: 31.488517,
@@ -467,16 +475,17 @@ const campuses = [
   {
     name: "Sheikh Zayed Islamic Centre",
     lat: 31.490817,
-    lng: 74.294840,
+    lng: 74.29484,
     info: "Sheikh Zayed Islamic Centre, Faculty of Islamic Studies, University of the Punjab.",
-    address: "Block D, Canal View Colony, F7RV+8WG, Quaid-i-Azam Campus, Lahore, Pakistan",
+    address:
+      "Block D, Canal View Colony, F7RV+8WG, Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
- 
+
   // ─────────────────────────────────────────────────────────
   //  ➕ NEWLY ADDED — Faculty of Law
   // ─────────────────────────────────────────────────────────
- 
+
   {
     name: "University Law College",
     lat: 31.497821,
@@ -485,11 +494,11 @@ const campuses = [
     address: "F8X2+4WF, Canal Rd, Quaid-i-Azam Campus, Lahore, 54590, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
- 
+
   // ─────────────────────────────────────────────────────────
   //  ➕ NEWLY ADDED — Faculty of Life-Sciences
   // ─────────────────────────────────────────────────────────
- 
+
   {
     name: "Institute of Botany",
     lat: 31.501322,
@@ -503,7 +512,8 @@ const campuses = [
     lat: 31.495939,
     lng: 74.296004,
     info: "Institute of Microbiology and Molecular Genetics, Faculty of Life-Sciences, University of the Punjab.",
-    address: "Punjab University North Underpass, Quaid-i-Azam Campus, Lahore, Pakistan",
+    address:
+      "Punjab University North Underpass, Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
   {
@@ -519,7 +529,8 @@ const campuses = [
     lat: 31.477946,
     lng: 74.262204,
     info: "National Centre of Excellence in Molecular Biology (CEMB), Faculty of Life-Sciences, University of the Punjab.",
-    address: "Sector-1, 87 West Canal Rd, Quaid-i-Azam Campus, Lahore, 53700, Pakistan",
+    address:
+      "Sector-1, 87 West Canal Rd, Quaid-i-Azam Campus, Lahore, 53700, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
   {
@@ -530,11 +541,11 @@ const campuses = [
     address: "University of the Punjab, Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
- 
+
   // ─────────────────────────────────────────────────────────
   //  ➕ NEWLY ADDED — Faculty of Oriental Learning
   // ─────────────────────────────────────────────────────────
- 
+
   {
     name: "Confucius Institute",
     lat: 31.502437,
@@ -551,22 +562,23 @@ const campuses = [
     address: "Geology Building, Quaid-i-Azam Campus, Lahore, 54590, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
- 
+
   // ─────────────────────────────────────────────────────────
   //  ➕ NEWLY ADDED — Faculty of Quality & Industrial Systems Engineering
   // ─────────────────────────────────────────────────────────
- 
+
   {
     name: "Institute of Quality & Technology Management",
-    lat: 31.496234873819887, 
+    lat: 31.496234873819887,
     lng: 74.30105325585001,
     info: "Institute of Quality & Technology Management (IQTM), Faculty of Quality & Industrial Systems Engineering, University of the Punjab.",
-    address: "F8W2+G95, PU Cemetery Trail, Quaid-i-Azam Campus, Lahore, Pakistan",
+    address:
+      "F8W2+G95, PU Cemetery Trail, Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
   {
     name: "Institute of Industrial Engineering & Management",
-    lat: 31.496437969563047, 
+    lat: 31.496437969563047,
     lng: 74.30100497266258,
     info: "Institute of Industrial Engineering & Management, Faculty of Quality & Industrial Systems Engineering, University of the Punjab.",
     address: "Quaid-i-Azam Campus, Lahore, Pakistan",
@@ -575,7 +587,7 @@ const campuses = [
   // ─────────────────────────────────────────────────────────
   //  ➕ NEWLY ADDED — Faculty of Science
   // ─────────────────────────────────────────────────────────
- 
+
   {
     name: "Centre of Excellence in Solid State Physics",
     lat: 31.500161,
@@ -594,7 +606,7 @@ const campuses = [
   },
   {
     name: "Department of Physics",
-    lat: 31.501928387930946, 
+    lat: 31.501928387930946,
     lng: 74.307623,
     info: "Department of Physics, Faculty of Science, University of the Punjab.",
     address: "Department of Physics, Quaid-i-Azam Campus, Lahore, Pakistan",
@@ -613,28 +625,31 @@ const campuses = [
     lat: 31.501018,
     lng: 74.306827,
     info: "School of Chemistry, Faculty of Science, University of the Punjab. Established as University Chemical Laboratories in 1923.",
-    address: "G824+CP4, University of The Punjab, Quaid-i-Azam Campus, Lahore, Pakistan",
+    address:
+      "G824+CP4, University of The Punjab, Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
   {
     name: "PUCIT New Campus",
-    lat: 31.480564254982212, 
+    lat: 31.480564254982212,
     lng: 74.26517796672314,
     info: "PUCIT New Campus, University of the Punjab.",
-    address: "University of The Punjab, New Campus, Hanjarwal Campus, Lahore, Pakistan",
+    address:
+      "University of The Punjab, New Campus, Hanjarwal Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
   {
     name: "PUCIT Old Campus",
-    lat: 31.570386681595636, 
+    lat: 31.570386681595636,
     lng: 74.30962225521036,
     info: "PUCIT Old Campus, University of the Punjab.",
-    address: "University of The Punjab, Old Campus, , Allama Iqbal Campus, Lahore, Pakistan",
+    address:
+      "University of The Punjab, Old Campus, , Allama Iqbal Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
   {
     name: "Institute of Special Education",
-    lat: 31.503020016223864, 
+    lat: 31.503020016223864,
     lng: 74.31181353942243,
     info: "Institute of Special Education, University of the Punjab.",
     address: "University of The Punjab, Quaid-e-Azam Campus, Lahore, Pakistan",
@@ -643,25 +658,26 @@ const campuses = [
 ];
 
 const hostels = [
- 
   // ─────────────────────────────────────────────────────────
   //  🏠 BOYS HOSTELS
   // ─────────────────────────────────────────────────────────
- 
+
   {
     name: "Boys Hostel No. 1 — Quaid-e-Azam Hall",
     lat: 31.498664,
     lng: 74.309689,
     info: "Boys Hostel No. 1 (Quaid-e-Azam Hall), University of the Punjab, Quaid-i-Azam Campus. One of the oldest boys hostels on campus.",
-    address: "1 Punjab University Hostel Rd, Quaid-i-Azam Campus, Lahore, Pakistan",
+    address:
+      "1 Punjab University Hostel Rd, Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
   {
     name: "Boys Hostel No. 2 — Sir Syed International Hall",
-    lat: 31.499147162263082, 
+    lat: 31.499147162263082,
     lng: 74.30848541882162,
     info: "Boys Hostel No. 2 (Sir Syed International Hall), University of the Punjab, Quaid-i-Azam Campus. Known for its modern facilities and academic support.",
-    address: "2 Punjab University Hostel Rd, Quaid-i-Azam Campus, Lahore, Pakistan",
+    address:
+      "2 Punjab University Hostel Rd, Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
   {
@@ -682,7 +698,7 @@ const hostels = [
   },
   {
     name: "Boys Hostel No. 7 - Aurang Zaib Alamgir Hall",
-    lat: 31.499002679052037, 
+    lat: 31.499002679052037,
     lng: 74.30981249999999,
     info: "Boys Hostel No. 7, University of the Punjab. One of the most well-reviewed boys hostels on campus, known for its clean environment and cooperative staff.",
     address: "Quaid-i-Azam Campus, Lahore, Pakistan",
@@ -690,7 +706,7 @@ const hostels = [
   },
   {
     name: "Boys Hostel No. 8 - Tipu Sultan Hall",
-    lat: 31.499894617700548, 
+    lat: 31.499894617700548,
     lng: 74.31075127287595,
     info: "Boys Hostel No. 8, University of the Punjab. One of the most well-reviewed boys hostels on campus, known for its clean environment and cooperative staff.",
     address: "Quaid-i-Azam Campus, Lahore, Pakistan",
@@ -709,7 +725,8 @@ const hostels = [
     lat: 31.500931,
     lng: 74.310497,
     info: "Boys Hostel No. 11 (Salahuddin Ayubi Hall), University of the Punjab. Near Gate 4 on Canal Road. Known for its spacious rooms and clean washrooms.",
-    address: "University of the Punjab, Quaid-i-Azam Campus, Lahore, 54000, Pakistan",
+    address:
+      "University of the Punjab, Quaid-i-Azam Campus, Lahore, 54000, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
   {
@@ -730,7 +747,7 @@ const hostels = [
   },
   {
     name: "Boys Hostel No. 18 - Hazrat Usman Ghani Hall",
-    lat: 31.492168744409177, 
+    lat: 31.492168744409177,
     lng: 74.30373906976722,
     info: "Boys Hostel No. 18, University of the Punjab, Quaid-i-Azam Campus. Houses students from across Pakistan.",
     address: "F8Q3+932, Quaid-i-Azam Campus, Lahore, Pakistan",
@@ -738,7 +755,7 @@ const hostels = [
   },
   {
     name: "Boys Hostel No. 19 - Hazrat Abu Bakar Siddique Hall",
-    lat: 31.492443202081038, 
+    lat: 31.492443202081038,
     lng: 74.30388927346456,
     info: "Boys Hostel No. 19, University of the Punjab, Quaid-i-Azam Campus. Houses students from across Pakistan.",
     address: "F8Q3+932, Quaid-i-Azam Campus, Lahore, Pakistan",
@@ -748,7 +765,7 @@ const hostels = [
   // ─────────────────────────────────────────────────────────
   //  🏠 GIRLS HOSTELS
   // ─────────────────────────────────────────────────────────
- 
+
   {
     name: "Girls Hostel No. 1 - Fatima Jinnah Hall",
     lat: 31.495288,
@@ -759,7 +776,7 @@ const hostels = [
   },
   {
     name: "Girls Hostel No. 2 - Hazrat Ayesha Sadique Hall",
-    lat: 31.496310,
+    lat: 31.49631,
     lng: 74.305842,
     info: "Girls Hostel No. 2, University of the Punjab. Available to regular PU students on merit basis.",
     address: "Girls Hostel Rd, Quaid-i-Azam Campus, Lahore, Pakistan",
@@ -767,7 +784,7 @@ const hostels = [
   },
   {
     name: "Girls Hostel No. 3 - Hazrat Maryam Hall",
-    lat: 31.494951445273337, 
+    lat: 31.494951445273337,
     lng: 74.3049335581072,
     info: "Girls Hostel No. 3 - Hazrat Maryam Hall, University of the Punjab. Available to regular PU students on merit basis.",
     address: "Girls Hostel Rd, Quaid-i-Azam Campus, Lahore, Pakistan",
@@ -775,7 +792,7 @@ const hostels = [
   },
   {
     name: "Girls Hostel No. 4 — Khadija & Amna Hall",
-    lat: 31.494464650323096, 
+    lat: 31.494464650323096,
     lng: 74.30583339546662,
     info: "Girls Hostel No. 4 (Khadija Hall & Amna Hall), University of the Punjab. One of the largest girls hostels on campus with two residential halls.",
     address: "F8V3+PPR, Quaid-i-Azam Campus, Lahore, Pakistan",
@@ -794,7 +811,8 @@ const hostels = [
     lat: 31.493474,
     lng: 74.304832,
     info: "Girls Hostel No. 6, University of the Punjab. Good infrastructure with cooperative staff and lush green surroundings.",
-    address: "19 Punjab University Hostel Rd, Quaid-i-Azam Campus, Lahore, Pakistan",
+    address:
+      "19 Punjab University Hostel Rd, Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
   {
@@ -818,15 +836,17 @@ const hostels = [
     lat: 31.489995,
     lng: 74.301331,
     info: "Girls Hostel No. 9 (Hazrat Sakina Hall), University of the Punjab. Open 24 hours on weekdays. Spacious rooms with a lush green environment.",
-    address: "F8Q2+XGW, Girls Hostel Rd, Quaid-i-Azam Campus, Lahore, 54000, Pakistan",
+    address:
+      "F8Q2+XGW, Girls Hostel Rd, Quaid-i-Azam Campus, Lahore, 54000, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
   {
     name: "Girls Hostel No. 10",
-    lat: 31.490861156479443, 
+    lat: 31.490861156479443,
     lng: 74.29962065092434,
     info: "Girls Hostel No. 10, University of the Punjab. Located near the main entrance with easy access to academic buildings.",
-    address: "F8Q2+XGW, Girls Hostel Rd, Quaid-i-Azam Campus, Lahore, 54000, Pakistan",
+    address:
+      "F8Q2+XGW, Girls Hostel Rd, Quaid-i-Azam Campus, Lahore, 54000, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
   {
@@ -834,7 +854,8 @@ const hostels = [
     lat: 31.491748,
     lng: 74.301594,
     info: "Girls Hostel No. 11, University of the Punjab. Located near Canal Bank Road, Wafaqi Colony. Peaceful environment with good canteen.",
-    address: "319/2, Canal Bank Road, near Wafaqi Colony, Quaid-i-Azam Campus, Lahore, Pakistan",
+    address:
+      "319/2, Canal Bank Road, near Wafaqi Colony, Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
   {
@@ -853,11 +874,11 @@ const hostels = [
     address: "F8V3+PX8, Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
- 
-   // ─────────────────────────────────────────────────────────
+
+  // ─────────────────────────────────────────────────────────
   //  🎓 POSTGRADUATE / PhD HOSTELS
   // ─────────────────────────────────────────────────────────
- 
+
   {
     name: "SBS MPhil & PhD Hostel",
     lat: 31.502307,
@@ -871,14 +892,15 @@ const hostels = [
     lat: 31.501774,
     lng: 74.312879,
     info: "New Girls PhD Hostel, University of the Punjab. Newly built postgraduate hostel for female PhD students with modern facilities.",
-    address: "G827+P52, Punjab University Hostel Rd, Quaid-i-Azam Campus, Lahore, Pakistan",
+    address:
+      "G827+P52, Punjab University Hostel Rd, Quaid-i-Azam Campus, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
- 
+
   // ─────────────────────────────────────────────────────────
   //  👨‍🏫 STAFF / FACULTY HOSTEL
   // ─────────────────────────────────────────────────────────
- 
+
   {
     name: "Staff Hostel — Faisal Hall No. 10",
     lat: 31.501312,
@@ -892,7 +914,7 @@ const hostels = [
 const grounds = [
   {
     name: "Punjab University Cricket Ground",
-    lat: 31.499978331208045, 
+    lat: 31.499978331208045,
     lng: 74.31441645404985,
     info: "Main cricket ground for sports activities.",
     address: "Quaid-i-Azam Campus, Lahore, Pakistan",
@@ -900,7 +922,7 @@ const grounds = [
   },
   {
     name: "Punjab University Hockey Ground",
-    lat: 31.498160671542212, 
+    lat: 31.498160671542212,
     lng: 74.31147969351804,
     info: "Main hockey ground for sports activities.",
     address: "Quaid-i-Azam Campus, Lahore, Pakistan",
@@ -908,7 +930,7 @@ const grounds = [
   },
   {
     name: "Punjab University Football Ground",
-    lat: 31.497061498875247, 
+    lat: 31.497061498875247,
     lng: 74.31221610672185,
     info: "Football field for matches and training.",
     address: "University of the Punjab, Lahore, Pakistan",
@@ -916,7 +938,7 @@ const grounds = [
   },
   {
     name: "Basketball Court",
-    lat: 31.49132753608863, 
+    lat: 31.49132753608863,
     lng: 74.30391509315724,
     info: "Basketball court with modern facilities.",
     address: "Quaid-i-Azam Campus, Lahore, Pakistan",
@@ -930,7 +952,7 @@ const grounds = [
     address: "University of the Punjab, Lahore, Pakistan",
     image: "https://maps.gstatic.com/tactile/pane/default_geocode-2x.png",
   },
- {
+  {
     name: "Punjab University Swimming Pool",
     lat: 31.497207200000002,
     lng: 74.3084662,
@@ -1007,7 +1029,7 @@ const grounds = [
   },
   {
     name: "PU Girls Sports Hostel Ground",
-    lat: 31.4964208242959, 
+    lat: 31.4964208242959,
     lng: 74.3075171779622,
     info: "Dedicated sports ground attached to the Girls Hostel for female athletes.",
     address: "Quaid-i-Azam Campus, Lahore, Pakistan",
@@ -1015,7 +1037,7 @@ const grounds = [
   },
   {
     name: "PU Seed Research Farms",
-    lat: 31.498835660275972, 
+    lat: 31.498835660275972,
     lng: 74.29893486771515,
     info: "Research and botanical garden maintained by the Seed Research Center on campus.",
     address: "Quaid-i-Azam Campus, Lahore, Pakistan",
@@ -1066,170 +1088,300 @@ const gates = [
   },
 ];
 
-
 //  Routes constant data
 const routes = [
   {
-    id: 1,
-    name: "Route 1: Dharampura",
-    desc: "Via Canal Road & Jail Road",
+    id: 1, // Aap apni preference ke mutabiq ID change kar sakte hain
+    name: "Barki Route",
+    desc: "Via Canal Road, Dharampura & Barki Road",
     color: "#ef4444",
     waypoints: [
-      { lat: 31.49124295709786, lng: 74.29731155759698, name: "PU Transport" },
-      { lat: 31.49347269170771,  lng: 74.30083213371547, name: "Quaid-e-Azam Campus" },
-      { lat: 31.50442748225822,  lng: 74.31100962712866, name: "New Campus Bridge" },
-      { lat: 31.483277459807532, lng: 74.2970539341957, name: "Faisal Town" },
-      { lat: 31.515, lng: 74.332, name: "Canal Road Stop" },
-      { lat: 31.521, lng: 74.338, name: "Garden Town" },
-      { lat: 31.528, lng: 74.345, name: "Jail Road Underpass" },
-      { lat: 31.535, lng: 74.356, name: "Barkat Market" },
-      { lat: 31.542, lng: 74.368, name: "Thokar Niaz Baig" },
-      { lat: 31.547, lng: 74.366, name: "Model Town Link" },
       {
-        lat: 31.552650439870856,
-        lng: 74.36484554409991,
-        name: "Dharampura Terminal",
+        lat: 31.496541,
+        lng: 74.297017,
+        name: "Cafe Millenials (Cafeteria PU)",
       },
+      {
+        lat: 31.493642,
+        lng: 74.30101,
+        name: "School of Communication Studies",
+      },
+      { lat: 31.497477, lng: 74.303717, name: "Hailey College of Commerce" },
+      { lat: 31.499484, lng: 74.303228, name: "Law College Rd" },
+      { lat: 31.502469, lng: 74.306643, name: "Political Science" },
+      { lat: 31.5562, lng: 74.3644, name: "Dharampura / Mustafa Abad" },
+      { lat: 31.549998, lng: 74.380779, name: "Sadar Cantt" },
+      { lat: 31.548775, lng: 74.40511, name: "Jurray Pull" },
+      { lat: 31.544989, lng: 74.419529, name: "Guldasht Town" },
+      { lat: 31.543413, lng: 74.42343, name: "Chunghi Gujarpura" },
+      { lat: 31.530876, lng: 74.44049, name: "Bowala" },
+      { lat: 31.526598, lng: 74.44614, name: "Paragon City Main Gate" },
+      { lat: 31.512221, lng: 74.464975, name: "Green City Stop" },
+      { lat: 31.505416, lng: 74.473913, name: "Air Avenue / DHA Phase 8" },
+      { lat: 31.502695, lng: 74.477385, name: "Pangali Stop" },
+      { lat: 31.49689, lng: 74.485231, name: "Padri" },
+      { lat: 31.476247, lng: 74.512797, name: "Barki Terminal" },
+      { lat: 31.444362, lng: 74.556112, name: "Hudiara Drain Bridge" },
     ],
     batches: ["morning", "afternoon", "evening"],
   },
   {
     id: 2,
-    name: "Route 2: Ada Plot Route",
-    desc: "Via Raiwind Road & Jubilee",
+    name: "Khaira Pull Route",
+    desc: "Via Canal Road, Mughalpura & Harbanspura",
     color: "#3b82f6",
     waypoints: [
-      { lat: 31.49124295709786, lng: 74.29731155759698, name: "PU Transport" },
-      { lat: 31.485, lng: 74.29, name: "Old Campus Gate" },
-      { lat: 31.475, lng: 74.275, name: "Wahdat Road" },
-      { lat: 31.465, lng: 74.26, name: "Allama Iqbal Town" },
-      { lat: 31.455, lng: 74.245, name: "Jubilee Town" },
-      { lat: 31.445, lng: 74.235, name: "Raiwind Road" },
-      { lat: 31.435, lng: 74.225, name: "Township" },
-      { lat: 31.425, lng: 74.215, name: "Muslim Town" },
-      { lat: 31.415, lng: 74.205, name: "Akbar Chowk" },
-      { lat: 31.405, lng: 74.195, name: "Liberty Market" },
-      { lat: 31.395, lng: 74.185, name: "Mall Road" },
       {
-        lat: 31.36396678367765,
-        lng: 74.2344162295054,
-        name: "Ada Plot Terminal",
+        lat: 31.496541,
+        lng: 74.297017,
+        name: "Cafe Millenials (Cafeteria PU)",
+      },
+      {
+        lat: 31.493642,
+        lng: 74.30101,
+        name: "School of Communication Studies",
+      },
+      { lat: 31.497477, lng: 74.303717, name: "Hailey College of Commerce" },
+      { lat: 31.499484, lng: 74.303228, name: "Law College Rd" },
+      { lat: 31.502469, lng: 74.306643, name: "Political Science" },
+      { lat: 31.5562, lng: 74.3644, name: "Dharampura / Mustafa Abad" },
+      { lat: 31.56285, lng: 74.381346, name: "Mughalpura Underpass" },
+      { lat: 31.567628, lng: 74.40556, name: "Fateh Garh" },
+      { lat: 31.573618, lng: 74.434688, name: "Harbanspura" },
+      {
+        lat: 31.576148213172228,
+        lng: 74.44673986695416,
+        name: "Nawab Palace Marque",
+      },
+      {
+        lat: 31.57935735444077,
+        lng: 74.46308826135689,
+        name: "Lahore Medical & Dental College",
+      },
+      {
+        lat: 31.581618236542216,
+        lng: 74.47434149993387,
+        name: "Rizwan Garden",
+      },
+      {
+        lat: 31.583726594398147,
+        lng: 74.48475285089106,
+        name: "Sozo Water Park",
+      },
+      {
+        lat: 31.584812161742942,
+        lng: 74.48935489938901,
+        name: "Al Hafeez Garden Phase 2",
+      },
+      {
+        lat: 31.586856201427096,
+        lng: 74.50047242575347,
+        name: "Khaira Pull (Terminal)",
       },
     ],
     batches: ["morning", "afternoon", "evening"],
   },
   {
     id: 3,
-    name: "Route 3: Khatame Nabuwat Route",
-    desc: "Via North Campus & Khatame Nabuwat",
-    color: "#10b981",
+    name: "New Campus to Old Campus",
+    desc: "Connecting Quaid-i-Azam Campus to Allama Iqbal Campus",
+    color: "#10b981", // Purple color for distinction
     waypoints: [
-      { lat: 31.49124295709786, lng: 74.29731155759698, name: "PU Transport" },
-      { lat: 31.4945, lng: 74.292, name: "North Gate" },
-      { lat: 31.4985, lng: 74.2895, name: "Lahore Fort Road" },
-      { lat: 31.5025, lng: 74.2865, name: "Data Darbar" },
-      { lat: 31.5065, lng: 74.283, name: "Badshahi Mosque" },
-      { lat: 31.5105, lng: 74.28, name: "Shahi Hamam" },
-      { lat: 31.514, lng: 74.279, name: "Walled City Stop" },
       {
-        lat: 31.51733998322386,
-        lng: 74.27747826915596,
-        name: "Khatame Nabuwat Terminal",
+        lat: 31.496541,
+        lng: 74.297017,
+        name: "Cafe Millenials (Cafeteria PU)",
+      },
+      {
+        lat: 31.493642,
+        lng: 74.30101,
+        name: "School of Communication Studies",
+      },
+      {
+        lat: 31.497477,
+        lng: 74.303717,
+        name: "Hailey College of Commerce",
+      },
+      { lat: 31.499484, lng: 74.303228, name: "Law College Rd" },
+      { lat: 31.502469, lng: 74.306643, name: "Political Science" },
+      {
+        lat: 31.507539013101212,
+        lng: 74.3059521883618,
+        name: "Gate Number 4",
+      },
+      { lat: 31.511999, lng: 74.305264, name: "Wahdat Road" },
+      { lat: 31.520766, lng: 74.323958, name: "Muslim Town" },
+      { lat: 31.531854505634094, lng: 74.32111352517597, name: "Ichra" },
+      {
+        lat: 31.553733696611516,
+        lng: 74.31164281959362,
+        name: "Jahanghiaz East",
+      },
+      {
+        lat: 31.560996092095248,
+        lng: 74.30761106658598,
+        name: "Mozang",
+      },
+      { lat: 31.56243116119036, lng: 74.30470200622051, name: "MAO College" },
+      {
+        lat: 31.571449664749508,
+        lng: 74.30922250514533,
+        name: "PU Old Campus (Terminal)",
       },
     ],
     batches: ["morning", "afternoon", "evening"],
   },
   {
     id: 4,
-    name: "Route 4: Johar Town Route",
-    desc: "Via Canal Bank Road & Johar Town",
+    name: "Ada Plot Route",
+    desc: "Via Johar Town, Shaukat Khanum & Raiwind Road",
     color: "#f59e0b",
     waypoints: [
-      { lat: 31.49124295709786, lng: 74.29731155759698, name: "PU Transport" },
-      { lat: 31.488, lng: 74.31, name: "Canal Bank Road" },
-      { lat: 31.485, lng: 74.32, name: "Thal Canal Bridge" },
-      { lat: 31.48, lng: 74.33, name: "PCSIR" },
-      { lat: 31.475, lng: 74.335, name: "Harbanspura" },
-      { lat: 31.47, lng: 74.34, name: "Shadman Colony" },
-      { lat: 31.465, lng: 74.345, name: "Johar Town Phase 1" },
-      { lat: 31.46, lng: 74.35, name: "Johar Town Phase 2" },
-      { lat: 31.455, lng: 74.355, name: "Johar Town Phase 3" },
-      { lat: 31.45, lng: 74.358, name: "Wapda Town" },
       {
-        lat: 31.39933384835247,
-        lng: 74.36158930331601,
-        name: "Johar Town Terminal",
+        lat: 31.496541,
+        lng: 74.297017,
+        name: "Cafe Millenials (Cafeteria PU)",
+      },
+      {
+        lat: 31.493642,
+        lng: 74.30101,
+        name: "School of Communication Studies",
+      },
+      { lat: 31.497477, lng: 74.303717, name: "Hailey College of Commerce" },
+      { lat: 31.499484, lng: 74.303228, name: "Law College Rd" },
+      { lat: 31.502469, lng: 74.306643, name: "Political Science" },
+      {
+        lat: 31.50523651822226,
+        lng: 74.31060052454252,
+        name: "PU campus",
+      },
+      {
+        lat: 31.480059950993205,
+        lng: 74.28021533590046,
+        name: "Doctor's Hospital",
+      },
+      {
+        lat: 31.478688114899114,
+        lng: 74.27545837164352,
+        name: "Johar Town G-Block",
+      },
+      {
+        lat: 31.473192270342544,
+        lng: 74.25159225775484,
+        name: "Tokar Niaz Baig",
+      },
+      {
+        lat: 31.464204015829772,
+        lng: 74.24394691894824,
+        name: "Ali Town",
+      },
+      {
+        lat: 31.45937455652966,
+        lng: 74.24467603893152,
+        name: "Nawab Town",
+      },
+      {
+        lat: 31.455045876899828,
+        lng: 74.24524718092674,
+        name: "Choopa St.",
+      },
+      {
+        lat: 31.443203330330523,
+        lng: 74.23293570420232,
+        name: "Hassan Abad",
+      },
+      {
+        lat: 31.425216946383813,
+        lng: 74.23015179793327,
+        name: "University of the South Asia",
+      },
+      {
+        lat: 31.41911661656825,
+        lng: 74.22978885479748,
+        name: "Superior University Gold Campus",
+      },
+      {
+        lat: 31.399496406790917,
+        lng: 74.23007688791203,
+        name: "Ali Fatima Hospital",
+      },
+      {
+        lat: 31.379018178268307,
+        lng: 74.23023512052231,
+        name: "Ripha Univeristy",
+      },
+      { lat: 31.372345, lng: 74.218901, name: "Ada Plot (Terminal)" },
+      {
+        lat: 31.363782499303547,
+        lng: 74.23441897886761,
+        name: "Ada Plot (Terminal)",
       },
     ],
     batches: ["morning", "afternoon", "evening"],
   },
   {
     id: 5,
-    name: "Route 5: Gujranwala Road Route",
+    name: "Kasur Road Route",
     desc: "Via Gujranwala Road & Northern Bypass",
-    color: "#8b5cf6",
+    color: "#ec4899",
     waypoints: [
-      { lat: 31.49124295709786, lng: 74.29731155759698, name: "PU Transport" },
-      { lat: 31.5, lng: 74.295, name: "Gujranwala Road Junction" },
-      { lat: 31.51, lng: 74.292, name: "Barkat Market" },
-      { lat: 31.52, lng: 74.288, name: "Chauburji" },
-      { lat: 31.53, lng: 74.285, name: "LDA Avenue" },
-      { lat: 31.54, lng: 74.282, name: "Northern Bypass" },
-      { lat: 31.55, lng: 74.28, name: "Sundar Industrial Estate" },
-      { lat: 31.56, lng: 74.278, name: "Gulshan-e-Ravi" },
-      { lat: 31.57, lng: 74.276, name: "Raiwind Road Junction" },
-      { lat: 31.58, lng: 74.274, name: "Shalimar Link Road" },
-      { lat: 31.59, lng: 74.272, name: "Baghbanpura" },
-      { lat: 31.6, lng: 74.27, name: "Chungi Amar Sidhu" },
-      { lat: 31.61, lng: 74.268, name: "Kamahan" },
-      { lat: 31.62, lng: 74.266, name: "Bhuchokie" },
-      { lat: 31.63, lng: 74.264, name: "Chak Jhumra" },
-      { lat: 31.64, lng: 74.262, name: "Nankana Sahib Road" },
-      { lat: 31.65, lng: 74.26, name: "Wan Radha Ram" },
       {
-        lat: 31.658731110064455,
-        lng: 74.28185255054493,
-        name: "Gujranwala Road Terminal",
+        lat: 31.496541,
+        lng: 74.297017,
+        name: "Cafe Millenials (Cafeteria PU)",
       },
+      {
+        lat: 31.493642,
+        lng: 74.30101,
+        name: "School of Communication Studies",
+      },
+      { lat: 31.497477, lng: 74.303717, name: "Hailey College of Commerce" },
+      { lat: 31.499484, lng: 74.303228, name: "Law College Rd" },
+      { lat: 31.502469, lng: 74.306643, name: "Political Science" },
+      { lat: 31.49, lng: 74.318, name: "Kalma Chowk" },
+      { lat: 31.468, lng: 74.325, name: "Model Town Mor" },
+      { lat: 31.448, lng: 74.338, name: "Chungi Amar Sidhu" },
+      { lat: 31.428, lng: 74.348, name: "Gajju Mata (Metro Last Station)" },
+      { lat: 31.385, lng: 74.362, name: "Kahna Nau" },
+      { lat: 31.32, lng: 74.395, name: "Lilliani (Mustafabad)" },
+      { lat: 31.245, lng: 74.43, name: "Raja Jang" },
+      { lat: 31.185, lng: 74.45, name: "Landa Bazar Kasur" },
+      { lat: 31.118, lng: 74.445, name: "Kasur Terminal (Ghanda Singh Rd)" },
     ],
     batches: ["morning", "afternoon", "evening"],
   },
   {
     id: 6,
-    name: "Route 6: Sheikhupura Road Route",
-    desc: "Via Sheikhupura Road & Motorway Access",
-    color: "#ec4899",
+    name: "Sheikhupura Route",
+    desc: "Via Samanabad, Saggian Bridge & Sheikhupura Road",
+    color: "#6366f1",
     waypoints: [
-      { lat: 31.49124295709786, lng: 74.29731155759698, name: "PU Transport" },
-      { lat: 31.495, lng: 74.29, name: "Sheikhupura Road Junction" },
-      { lat: 31.5, lng: 74.28, name: "Ichhra" },
-      { lat: 31.51, lng: 74.27, name: "Samanabad" },
-      { lat: 31.52, lng: 74.26, name: "Lahore Ring Road" },
-      { lat: 31.53, lng: 74.25, name: "Kot Abdul Malik" },
-      { lat: 31.54, lng: 74.24, name: "Chah Miran" },
-      { lat: 31.55, lng: 74.23, name: "Muridke Road" },
-      { lat: 31.56, lng: 74.22, name: "Bhai Pheru" },
-      { lat: 31.57, lng: 74.21, name: "Kala Shah Kaku" },
-      { lat: 31.58, lng: 74.2, name: "Chunian" },
-      { lat: 31.59, lng: 74.19, name: "Pattoki Road" },
-      { lat: 31.6, lng: 74.18, name: "Harbanspura" },
-      { lat: 31.61, lng: 74.17, name: "Mananwala" },
-      { lat: 31.62, lng: 74.16, name: "Bukhari" },
-      { lat: 31.63, lng: 74.15, name: "Warburton" },
-      { lat: 31.64, lng: 74.14, name: "Farooqabad" },
-      { lat: 31.65, lng: 74.13, name: "Muridke" },
-      { lat: 31.66, lng: 74.12, name: "Sheikhupura Bypass" },
-      { lat: 31.67, lng: 74.11, name: "M-2 Motorway Interchange" },
-      { lat: 31.68, lng: 74.1, name: "Ferozewala" },
-      { lat: 31.69, lng: 74.09, name: "Safa Textile Mills" },
-      { lat: 31.7, lng: 74.08, name: "Sheikhupura Industrial Area" },
       {
-        lat: 31.71057847256802,
-        lng: 73.9953546628767,
-        name: "Sheikhupura Road Terminal",
+        lat: 31.496541,
+        lng: 74.297017,
+        name: "Cafe Millenials (Cafeteria PU)",
       },
+      {
+        lat: 31.493642,
+        lng: 74.30101,
+        name: "School of Communication Studies",
+      },
+      { lat: 31.497477, lng: 74.303717, name: "Hailey College of Commerce" },
+      { lat: 31.499484, lng: 74.303228, name: "Law College Rd" },
+      { lat: 31.502469, lng: 74.306643, name: "Political Science" },
+      { lat: 31.520543, lng: 74.295432, name: "Samanabad Mor" },
+      { lat: 31.531234, lng: 74.288765, name: "Yateem Khana Chowk" },
+      { lat: 31.558901, lng: 74.265432, name: "Saggian Bridge" },
+      { lat: 31.585678, lng: 74.234567, name: "Kot Abdul Malik" },
+      { lat: 31.621234, lng: 74.185432, name: "Javed Nagar" },
+      { lat: 31.654321, lng: 74.125678, name: "Chahuran Stop" },
+      { lat: 31.685678, lng: 74.085432, name: "Feroze Wattwan" },
+      { lat: 31.701234, lng: 74.045678, name: "Sheikhupura Bypass" },
+      { lat: 31.712345, lng: 74.015432, name: "Hiran Minar Interchange" },
+      { lat: 31.716543, lng: 73.985432, name: "Batti Chowk Sheikhupura" },
+      { lat: 31.710578, lng: 73.995354, name: "Sheikhupura Terminal" },
     ],
-    batches: ["morning", "afternoon", "evening"],
+    batches: ["morning", "afternoon"],
   },
 ];
 

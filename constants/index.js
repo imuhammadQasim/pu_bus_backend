@@ -1310,7 +1310,6 @@ const routes = [
         lng: 74.23023512052231,
         name: "Ripha Univeristy",
       },
-      { lat: 31.372345, lng: 74.218901, name: "Ada Plot (Terminal)" },
       {
         lat: 31.363782499303547,
         lng: 74.23441897886761,

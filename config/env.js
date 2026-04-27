@@ -17,6 +17,8 @@ const CONFIG = {
         RATE_LIMIT_WINDOW_MS: parseInt(process.env.RATE_LIMIT_WINDOW_MS) || 900000,
         RATE_LIMIT_MAX_REQUESTS:
             parseInt(process.env.RATE_LIMIT_MAX_REQUESTS) || 100,
+        JWT_SECRET: process.env.JWT_SECRET || "fallback_secret",
+        JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN || "7d",
     },
 
     // CORS

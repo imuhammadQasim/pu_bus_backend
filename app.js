@@ -17,7 +17,7 @@ app.use(
 );
 app.use(
   cors({
-    origin: config.CORS.ORIGIN,
+    origin: true, // Reflects the request origin, allowing all origins while supporting credentials
     credentials: true,
   }),
 );

@@ -23,7 +23,7 @@ const CONFIG = {
     CORS: {
         ORIGIN: process.env.CORS_ORIGIN
             ? process.env.CORS_ORIGIN.split(",")
-            : ["http://localhost:3000"],
+            : ["http://localhost:8080"],
     },
 
     MAILER_ENV: {

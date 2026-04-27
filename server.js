@@ -8,7 +8,7 @@ var accessLogStream = fs.createWriteStream(path.join(__dirname, "access.log"), {
   flags: "a",
 });
 
-app.use(morgan("combined", { stream: accessLogStream }));
+// app.use(morgan("combined", { stream: accessLogStream }));
 
 app.get("/health", (req, res) => {
   res.json({ status: "okay" });

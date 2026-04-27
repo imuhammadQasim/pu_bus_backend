@@ -12,7 +12,10 @@ const signup = asyncHandler(async (req, res) => {
 
   // Validate email domain
   if (!email.endsWith("@pu.edu.pk")) {
-    throw new APIERROR(400, "Only University of the Punjab email addresses (@pu.edu.pk) are allowed.");
+    throw new APIERROR(
+      400,
+      "Only University of the Punjab email addresses (@pu.edu.pk) are allowed.",
+    );
   }
 
   // Check if user already exists
@@ -34,7 +37,10 @@ const signup = asyncHandler(async (req, res) => {
   // Send OTP email
   const emailSent = await sendOTP(email, otp);
   if (!emailSent) {
-    throw new APIERROR(500, "Failed to send verification email. Please try again later.");
+    throw new APIERROR(
+      500,
+      "Failed to send verification email. Please try again later.",
+    );
   }
 
   if (existingUser) {
@@ -67,7 +73,13 @@ const signup = asyncHandler(async (req, res) => {
 
   return res
     .status(201)
-    .json(new APIRESPONSE(201, null, "OTP sent successfully to your university email."));
+    .json(
+      new APIRESPONSE(
+        201,
+        null,
+        "OTP sent successfully to your university email.",
+      ),
+    );
 });
 
 const verifyOTP = asyncHandler(async (req, res) => {
@@ -103,14 +115,20 @@ const verifyOTP = asyncHandler(async (req, res) => {
   const token = jwt.sign(
     { id: verifiedUser.id, email: verifiedUser.email },
     config.SECURITY.JWT_SECRET,
-    { expiresIn: config.SECURITY.JWT_EXPIRES_IN }
+    { expiresIn: config.SECURITY.JWT_EXPIRES_IN },
   );
 
   const { password, ...userData } = verifiedUser;
 
   return res
     .status(200)
-    .json(new APIRESPONSE(200, { user: userData, token }, "Account verified successfully."));
+    .json(
+      new APIRESPONSE(
+        200,
+        { user: userData, token },
+        "Account verified successfully.",
+      ),
+    );
 });
 
 const signin = asyncHandler(async (req, res) => {
@@ -133,14 +151,32 @@ const signin = asyncHandler(async (req, res) => {
   const token = jwt.sign(
     { id: user.id, email: user.email },
     config.SECURITY.JWT_SECRET,
-    { expiresIn: config.SECURITY.JWT_EXPIRES_IN }
+    { expiresIn: config.SECURITY.JWT_EXPIRES_IN },
   );
 
   const { password: _, ...userData } = user;
 
   return res
     .status(200)
-    .json(new APIRESPONSE(200, { user: userData, token }, "Logged in successfully."));
+    .json(
+      new APIRESPONSE(
+        200,
+        { user: userData, token },
+        "Logged in successfully.",
+      ),
+    );
 });
 
-module.exports = { signup, verifyOTP, signin };
+const getMe = asyncHandler(async (req, res) => {
+  return res
+    .status(200)
+    .json(
+      new APIRESPONSE(
+        200,
+        { user: req.user },
+        "User details fetched successfully.",
+      ),
+    );
+});
+
+module.exports = { signup, verifyOTP, signin, getMe };

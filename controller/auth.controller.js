@@ -179,4 +179,109 @@ const getMe = asyncHandler(async (req, res) => {
     );
 });
 
-module.exports = { signup, verifyOTP, signin, getMe };
+const forgotPassword = asyncHandler(async (req, res) => {
+  const { email } = req.body;
+
+  // Validate email domain
+  if (!email.endsWith("@pu.edu.pk")) {
+    throw new APIERROR(
+      400,
+      "Only University of the Punjab email addresses (@pu.edu.pk) are allowed.",
+    );
+  }
+
+  // Check if user exists
+  const user = await prisma.user.findUnique({
+    where: { email },
+  });
+
+  if (!user || !user.isVerified) {
+    throw new APIERROR(
+      404,
+      "No verified account found with this email address.",
+    );
+  }
+
+  // Generate 6-digit OTP
+  const otp = Math.floor(100000 + Math.random() * 900000).toString();
+  const otpExpires = new Date(Date.now() + 10 * 60 * 1000); // 10 minutes
+
+  // Send OTP email
+  const emailSent = await sendOTP(email, otp);
+  if (!emailSent) {
+    throw new APIERROR(
+      500,
+      "Failed to send reset email. Please try again later.",
+    );
+  }
+
+  // Update user with OTP
+  await prisma.user.update({
+    where: { email },
+    data: {
+      otp,
+      otpExpires,
+    },
+  });
+
+  return res
+    .status(200)
+    .json(
+      new APIRESPONSE(
+        200,
+        null,
+        "Password reset OTP sent successfully to your university email.",
+      ),
+    );
+});
+
+const resetPassword = asyncHandler(async (req, res) => {
+  const { email, otp, password } = req.body;
+
+  // Find the user
+  const user = await prisma.user.findUnique({
+    where: { email },
+  });
+
+  // Verify user exists
+  if (!user) {
+    throw new APIERROR(404, "User not found.");
+  }
+
+  // Check if OTP is valid and not expired
+  if (user.otp !== otp || user.otpExpires < new Date()) {
+    throw new APIERROR(400, "Invalid or expired OTP.");
+  }
+
+  // Hash the new password
+  const hashedPassword = await bcrypt.hash(password, 10);
+
+  // Update user's password and clear OTP
+  await prisma.user.update({
+    where: { email },
+    data: {
+      password: hashedPassword,
+      otp: null,
+      otpExpires: null,
+    },
+  });
+
+  return res
+    .status(200)
+    .json(
+      new APIRESPONSE(
+        200,
+        null,
+        "Password has been reset successfully. You can now login with your new password.",
+      ),
+    );
+});
+
+module.exports = {
+  signup,
+  verifyOTP,
+  signin,
+  getMe,
+  forgotPassword,
+  resetPassword,
+};

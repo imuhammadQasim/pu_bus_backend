@@ -1,11 +1,12 @@
 const express = require("express");
 const lostFoundRouter = express.Router();
-// const { lostFoundController } = require("../controller");
+const { lostFoundController } = require("../controller");
+const authMiddleware = require("../middlewares/auth.middleware");
 
 // Standard RESTful routes
-lostFoundRouter.get("/lost-and-found", lostFoundController.getAllRoutes);
-lostFoundRouter.post("/add-lost-and-found", lostFoundController.addLostAndFound);
-lostFoundRouter.put("/update-lost-and-found/:id", lostFoundController.updateLostAndFound);
-lostFoundRouter.delete("/delete-lost-and-found/:id", lostFoundController.deleteLostAndFound);
+lostFoundRouter.get("/", lostFoundController.getAllItems);
+lostFoundRouter.post("/", authMiddleware, lostFoundController.addItem);
+lostFoundRouter.put("/:id", authMiddleware, lostFoundController.updateItem);
+lostFoundRouter.delete("/:id", authMiddleware, lostFoundController.deleteItem);
 
 module.exports = lostFoundRouter;

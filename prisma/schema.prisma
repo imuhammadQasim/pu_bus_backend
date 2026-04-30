@@ -44,6 +44,7 @@ model Route {
   batches           RouteBatch[]
   buses             Bus[]
   lostAndFoundItems LostAndFoundItem[]
+  reports           Report[]
 
   createdAt DateTime @default(now()) @map("created_at")
 
@@ -101,6 +102,11 @@ enum BatchType {
   EVENING
 }
 
+enum UserRole {
+  STUDENT
+  ADMIN
+}
+
 model User {
   id                String             @id @default(uuid())
   email             String             @unique
@@ -111,9 +117,11 @@ model User {
   isVerified        Boolean            @default(false) @map("is_verified")
   otp               String?
   otpExpires        DateTime?          @map("otp_expires")
+  role              UserRole           @default(STUDENT)
   createdAt         DateTime           @default(now()) @map("created_at")
   updatedAt         DateTime           @updatedAt @map("updated_at")
   lostAndFoundItems LostAndFoundItem[]
+  reports           Report[]
 
   @@map("users")
 }
@@ -136,4 +144,25 @@ model LostAndFoundItem {
   route   Route  @relation(fields: [routeId], references: [id], onDelete: Cascade)
 
   @@map("lost_and_found_items")
+}
+
+model Report {
+  id            String   @id @default(uuid())
+  type          String   @default("other") // conductor, driver, route, bus, app, other
+  subject       String?
+  conductorName String?  @map("conductor_name")
+  busNumber     String?  @map("bus_number")
+  description   String
+  priority      String   @default("medium") // low, medium, high
+  status        String   @default("pending") // pending, reviewed, resolved
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  userId String @map("user_id")
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  routeId String? @map("route_id")
+  route   Route?  @relation(fields: [routeId], references: [id], onDelete: SetNull)
+
+  @@map("reports")
 }

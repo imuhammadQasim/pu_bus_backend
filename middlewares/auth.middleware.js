@@ -7,7 +7,7 @@ const prisma = require("../database/prisma");
 const authMiddleware = asyncHandler(async (req, res, next) => {
   const authHeader = req.headers.authorization;
 
-  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+  if (!authHeader || !authHeader.toLowerCase().startsWith("bearer ")) {
     throw new APIERROR(401, "No token provided, authorization denied.");
   }
 
@@ -15,7 +15,7 @@ const authMiddleware = asyncHandler(async (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, config.SECURITY.JWT_SECRET);
-    
+
     const user = await prisma.user.findUnique({
       where: { id: decoded.id },
       select: {
@@ -25,6 +25,7 @@ const authMiddleware = asyncHandler(async (req, res, next) => {
         lastName: true,
         phoneNumber: true,
         isVerified: true,
+        role: true,
         createdAt: true,
       },
     });
@@ -36,10 +37,24 @@ const authMiddleware = asyncHandler(async (req, res, next) => {
     req.user = user;
     next();
   } catch (error) {
+    console.error("Auth Middleware Error:", error);
+
+    if (error instanceof APIERROR) {
+      throw error;
+    }
+
     if (error.name === "TokenExpiredError") {
       throw new APIERROR(401, "Token expired, please login again.");
     }
-    throw new APIERROR(401, "Invalid token.");
+
+    if (error.name === "JsonWebTokenError") {
+      throw new APIERROR(401, "Invalid token.");
+    }
+
+    throw new APIERROR(
+      500,
+      error.message || "Internal server error in authentication.",
+    );
   }
 });
 

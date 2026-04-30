@@ -67,6 +67,7 @@ const signup = asyncHandler(async (req, res) => {
         phoneNumber,
         otp,
         otpExpires,
+        role: "STUDENT", // Default role for new signups
       },
     });
   }
@@ -113,7 +114,7 @@ const verifyOTP = asyncHandler(async (req, res) => {
 
   // Generate JWT
   const token = jwt.sign(
-    { id: verifiedUser.id, email: verifiedUser.email },
+    { id: verifiedUser.id, email: verifiedUser.email, role: verifiedUser.role },
     config.SECURITY.JWT_SECRET,
     { expiresIn: config.SECURITY.JWT_EXPIRES_IN },
   );
@@ -149,7 +150,7 @@ const signin = asyncHandler(async (req, res) => {
 
   // Generate JWT
   const token = jwt.sign(
-    { id: user.id, email: user.email },
+    { id: user.id, email: user.email, role: user.role },
     config.SECURITY.JWT_SECRET,
     { expiresIn: config.SECURITY.JWT_EXPIRES_IN },
   );

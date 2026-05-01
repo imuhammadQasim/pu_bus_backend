@@ -1,8 +1,61 @@
 const prisma = require("../database/prisma");
 const { gates, campuses, hostels, grounds, routes } = require("../constants");
+const bcrypt = require("bcrypt");
 
 async function seed() {
   try {
+    const adminEmail = "admin@pu.edu.pk";
+    const studentEmail = "126874.stu.gis@pu.edu.pk";
+    const userPassword= bcrypt.hashSync("same1!", 10);
+    const adminPassword= bcrypt.hashSync("1@2.comM", 10);
+    
+
+    console.log("Seeding admin user...");
+    await prisma.user.upsert({
+      where: { email: adminEmail },
+      update: {
+        password: adminPassword,
+        firstName: "PU",
+        lastName: "Admin",
+        phoneNumber: "0000000000",
+        role: "ADMIN",
+        isVerified: true,
+      },
+      create: {
+        email: adminEmail,
+        password: adminPassword,
+        firstName: "PU",
+        lastName: "Admin",
+        phoneNumber: "0000000000",
+        role: "ADMIN",
+        isVerified: true,
+      },
+    });
+    console.log("Admin user seeded/updated.");
+
+    console.log("Seeding student user...");
+    await prisma.user.upsert({
+      where: { email: studentEmail },
+      update: {
+        password: userPassword,
+        firstName: "Student",
+        lastName: "PU",
+        phoneNumber: "1111111111",
+        role: "STUDENT",
+        isVerified: true,
+      },
+      create: {
+        email: studentEmail,
+        password: userPassword,
+        firstName: "Student",
+        lastName: "PU",
+        phoneNumber: "1111111111",
+        role: "STUDENT",
+        isVerified: true,
+      },
+    });
+    console.log("Student user seeded/updated.");
+
     await prisma.bus.deleteMany();
     await prisma.routeBatch.deleteMany();
     await prisma.waypoint.deleteMany();

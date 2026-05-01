@@ -69,7 +69,26 @@ const getBusLocation = asyncHandler(async (req, res) => {
     .json(new APIRESPONSE(200, busData, "Bus location fetched successfully"));
 });
 
+/**
+ * Get all buses (Admin)
+ */
+const getAllBuses = asyncHandler(async (req, res) => {
+  const buses = await prisma.bus.findMany({
+    include: {
+      route: true,
+    },
+    orderBy: {
+      busNumber: "asc",
+    },
+  });
+
+  return res
+    .status(200)
+    .json(new APIRESPONSE(200, buses, "All buses fetched successfully"));
+});
+
 module.exports = {
   getLiveLocations,
   getBusLocation,
+  getAllBuses,
 };

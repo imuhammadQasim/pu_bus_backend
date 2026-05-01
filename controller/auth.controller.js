@@ -137,6 +137,7 @@ const signin = asyncHandler(async (req, res) => {
   const user = await prisma.user.findUnique({
     where: { email },
   });
+  console.log("user ", user);
 
   if (!user || !user.isVerified) {
     throw new APIERROR(401, "Invalid email or password.");
@@ -277,6 +278,36 @@ const resetPassword = asyncHandler(async (req, res) => {
     );
 });
 
+/**
+ * Get all users (Admin)
+ */
+const getAllUsers = asyncHandler(async (req, res) => {
+  const users = await prisma.user.findMany({
+    where: {
+      id: {
+        not: req.user.id,
+      },
+    },
+    select: {
+      id: true,
+      email: true,
+      firstName: true,
+      lastName: true,
+      phoneNumber: true,
+      role: true,
+      isVerified: true,
+      createdAt: true,
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
+
+  return res
+    .status(200)
+    .json(new APIRESPONSE(200, users, "All users fetched successfully"));
+});
+
 module.exports = {
   signup,
   verifyOTP,
@@ -284,4 +315,5 @@ module.exports = {
   getMe,
   forgotPassword,
   resetPassword,
+  getAllUsers,
 };

@@ -81,6 +81,10 @@ model Bus {
   route   Route?  @relation(fields: [routeId], references: [id])
   routeId String? @map("route_id")
 
+  conductorName String? @map("conductor_name")
+  driverName    String? @map("driver_name")
+  capacity      Int?
+
   lat         Float?
   lng         Float?
   lastUpdated DateTime @default(now()) @updatedAt @map("last_updated")

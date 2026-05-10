@@ -6,9 +6,8 @@ async function seed() {
   try {
     const adminEmail = "admin@pu.edu.pk";
     const studentEmail = "126874.stu.gis@pu.edu.pk";
-    const userPassword= bcrypt.hashSync("same1!", 10);
-    const adminPassword= bcrypt.hashSync("1@2.comM", 10);
-    
+    const userPassword = bcrypt.hashSync("1@2.comM", 10);
+    const adminPassword = bcrypt.hashSync("1@2.comM", 10);
 
     console.log("Seeding admin user...");
     await prisma.user.upsert({

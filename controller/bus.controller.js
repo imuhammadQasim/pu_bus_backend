@@ -87,8 +87,77 @@ const getAllBuses = asyncHandler(async (req, res) => {
     .json(new APIRESPONSE(200, buses, "All buses fetched successfully"));
 });
 
+/**
+ * Create Buses (Admin)
+ */
+
+const createBus = asyncHandler(async (req, res) => {
+  const { busNumber, routeId, conductorName, driverName, capacity } = req.body;
+
+  if (!busNumber || !routeId) {
+    throw new APIERROR(400, "Bus number and route is required");
+  }
+
+  const bus = await prisma.bus.create({
+    data: {
+      busNumber,
+      route: { connect: { id: routeId } },
+      conductorName,
+      driverName,
+      capacity: capacity ? parseInt(capacity) : null,
+    },
+  });
+
+  return res
+    .status(200)
+    .json(new APIRESPONSE(200, bus, "Bus created successfully"));
+});
+
+/**
+ * Update Bus
+ */
+const updateBus = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  const { busNumber, routeId, conductorName, driverName, capacity, status } =
+    req.body;
+
+  const bus = await prisma.bus.update({
+    where: { id },
+    data: {
+      busNumber,
+      route: routeId ? { connect: { id: routeId } } : undefined,
+      conductorName,
+      driverName,
+      capacity: capacity ? parseInt(capacity) : undefined,
+      status,
+    },
+  });
+
+  return res
+    .status(200)
+    .json(new APIRESPONSE(200, bus, "Bus updated successfully"));
+});
+
+/**
+ * Delete Bus
+ */
+const deleteBus = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+
+  await prisma.bus.delete({
+    where: { id },
+  });
+
+  return res
+    .status(200)
+    .json(new APIRESPONSE(200, null, "Bus deleted successfully"));
+});
+
 module.exports = {
   getLiveLocations,
   getBusLocation,
   getAllBuses,
+  createBus,
+  updateBus,
+  deleteBus,
 };
